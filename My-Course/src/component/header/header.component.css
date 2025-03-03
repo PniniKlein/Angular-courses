@@ -1,0 +1,49 @@
+.toolbar {
+    direction: ltr;
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    /* מרכז את האייקון והטקסט */
+    margin-left: 8px;
+    /* רווח בין הכפתורים */
+}
+
+mat-icon {
+    margin: 0;
+}
+
+.button {
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-left: 2%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    margin-right: 2%;
+    margin-left: 0;
+    transition: none;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.text{
+    margin-left: 5px;
+}
+
+.text2{
+    margin-left: 8px;
+}

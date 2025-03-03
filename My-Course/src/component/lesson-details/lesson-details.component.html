@@ -1,0 +1,45 @@
+<!-- <div class="overlay">
+    <div id="root">
+      <h1>Add Lesson:</h1>
+      <form #form="ngForm" (ngSubmit)="saveCourse()">
+
+      <mat-form-field class="input">
+        <mat-label>title:</mat-label>
+        <input matInput #title="ngModel" id="title" [(ngModel)]="lesson.title" name="title" required />
+      </mat-form-field>
+
+      <mat-form-field class="input">
+        <mat-label>content:</mat-label>
+        <input matInput #content="ngModel" id="content" [(ngModel)]="lesson.content" name="content" required />
+      </mat-form-field>
+
+      <button mat-raised-button type="submit" color="primary" class="button-green bt" [disabled]="form.invalid">Save</button>
+      <button mat-raised-button (click)="cancel()" class="button-red bt">cancel</button>
+
+    </form>
+  </div>
+</div> -->
+
+<div class="overlay">
+  <div id="root" class="form-container">
+    <h1>Add Lesson:</h1>
+    <form  #form="ngForm" (ngSubmit)="saveCourse()">
+      
+      <mat-form-field appearance="outline" class="input-field full-width">
+        <mat-label>title:</mat-label>
+        <input matInput #title="ngModel" id="title" [(ngModel)]="lesson.title" name="title" required />
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline" class="input-field full-width">
+        <mat-label>content:</mat-label>
+        <input matInput #content="ngModel" id="content" [(ngModel)]="lesson.content" name="content" required />
+      </mat-form-field>
+
+      <div class="button-group full-width">
+        <button mat-flat-button (click)="cancel()" color="primary" class="full-width">Cancel</button>
+        <button mat-flat-button type="submit" color="primary" class="full-width">Sign in</button>
+      </div>
+    </form>
+  
+  </div>
+</div>

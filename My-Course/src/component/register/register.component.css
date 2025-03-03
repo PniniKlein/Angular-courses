@@ -1,0 +1,85 @@
+#root {
+    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    height: 55vh;
+    width: 40vw !important;
+    margin: 0 auto;
+    margin-bottom: 14vh;
+    overflow: auto;
+}
+
+#root h1 {
+    padding-left: 10px;
+}
+
+.overlay {
+    position: fixed;
+    /* top: 63px; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+
+.button-red {
+    color: #f0f0f0;
+    background-color: #ff1900 !important;
+    width: 30%;
+    margin-left: 4%;
+}
+
+.button-green {
+    background-color: #16d43f !important;
+    width: 30%;
+
+}
+
+.button-container {
+    display: flex;
+    gap: 40px;
+}
+
+.input {
+    margin: 5px;
+    /* padding: 5px; */
+    border-radius: 5px;
+    width: 95%;
+    /* height: 70px; */
+}
+
+.back {
+    background-color: #ccc;
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    border: 0px;
+    border-radius: 50%;
+}
+
+.back .mat-icon {
+    margin-top: 3px;
+}
+
+.next {
+    margin-left: 34vw;
+    background-color: #ccc;
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    border: 0px;
+    border-radius: 50%;
+}
+
+.next .mat-icon {
+    margin-top: 2px;
+}

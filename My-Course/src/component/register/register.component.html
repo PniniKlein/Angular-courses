@@ -1,0 +1,114 @@
+<!-- <div class="overlay">
+    <div id="root">
+      <h1>Sign Up:</h1>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <mat-horizontal-stepper linear>
+        <mat-step label="User Details">
+      <mat-form-field class="input">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="input">
+        <mat-label>choose your role</mat-label>
+        <mat-select formControlName="role">
+          <mat-option value="student">student</mat-option>
+          <mat-option value="teacher">teacher</mat-option>
+          <mat-option value="admin">admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button class="next" matStepperNext>
+        <mat-icon>arrow_forward</mat-icon>
+    </button>
+    </mat-step>
+    <mat-step label="Contact Information">
+      <mat-form-field class="input">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" />
+
+      </mat-form-field>
+    
+      <mat-form-field class="input">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+        <mat-icon matSuffix (click)="togglePasswordVisibility()">{{ hide ? 'visibility' : 'visibility_off' }}</mat-icon>
+      </mat-form-field>
+    
+      <div class="button-container">
+        <button class="back" matStepperPrevious>
+          <mat-icon class="mat-icon">arrow_back</mat-icon>
+        </button>
+        <button mat-raised-button (click)="toggleForm()" class="button-red bt">cancel</button>
+        <button mat-raised-button type="submit" color="primary" class="button-green bt">Save</button>
+    </div>
+    </mat-step>
+    </mat-horizontal-stepper>
+    </form>
+  </div>
+</div> -->
+
+<div class="overlay">
+  <div id="root" class="form-container">
+    <h1>Sign Up</h1>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form">
+      
+      <mat-form-field appearance="outline" class="input-field full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required />
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline" class="input-field full-width">
+        <mat-label>Choose your role</mat-label>
+        <mat-select formControlName="role" required>
+          <mat-option value="student">Student</mat-option>
+          <mat-option value="teacher">Teacher</mat-option>
+          <mat-option value="admin">Admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline" class="input-field full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required />
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline" class="input-field full-width">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required />
+        <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+          <mat-icon>{{ hide ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      </mat-form-field>
+      
+      <div class="button-group full-width">
+        <button mat-flat-button (click)="toggleForm()" color="primary" class="full-width">Cancel</button>
+        <button mat-flat-button type="submit" color="primary" class="full-width">Sign up</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .full-width {
+    width: 100%;
+  }
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+  .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 50px; /* רווח מעל הטופס */
+  }
+  .form-container {
+    max-width: 400px;
+    min-height: 500px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px; /* רווח נוסף למעלה */
+  }
+</style>

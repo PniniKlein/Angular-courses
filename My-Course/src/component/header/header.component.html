@@ -1,0 +1,19 @@
+<mat-toolbar class="toolbar">
+  <button routerLink="/Courses" class="button">
+    <mat-icon class="icon">school</mat-icon>
+    <span class="text2">courses</span>
+  </button>
+  <button routerLink="/" class="button">
+    <mat-icon class="icon">home</mat-icon>
+    <span class="text2">home</span>
+  </button>
+  @if(this.user$.value.id==0){
+  <span class="spacer"></span>
+  <button routerLink="/Login" class="button">
+    <mat-icon class="icon">person</mat-icon>
+    <span class="text"> sign In</span>
+  </button>
+}
+</mat-toolbar>
+
+<router-outlet></router-outlet>

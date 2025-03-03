@@ -1,0 +1,23 @@
+<div class="overlay">
+  <div id="root" class="form-container">
+    <h1>Add Lesson:</h1>
+    <form  #form="ngForm" (ngSubmit)="saveCourse()">
+      
+      <mat-form-field appearance="outline" class="input-field full-width">
+        <mat-label>title:</mat-label>
+        <input matInput #title="ngModel" id="title" [(ngModel)]="course.title" name="title" required />
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline" class="input-field full-width">
+        <mat-label>discreption:</mat-label>
+        <input matInput #discreption="ngModel" id="discreption" [(ngModel)]="course.description" name="discreption" required />
+      </mat-form-field>
+
+      <div class="button-group full-width">
+        <button mat-flat-button (click)="cancel()" color="primary" class="full-width">Cancel</button>
+        <button mat-flat-button type="submit" color="primary" class="full-width">Sign in</button>
+      </div>
+    </form>
+  
+  </div>
+</div>

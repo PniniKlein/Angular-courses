@@ -1,0 +1,58 @@
+<div class="courses-container">
+  <h2 class="title">Available Courses</h2>
+
+  @if(this.user$.value.role=="teacher"){
+  <button class="btAdd" mat-flat-button color="primary" (click)="add()">
+    {{"Add Course"|icon }}
+  </button>
+  }
+
+  <div class="courses-grid">
+    @for(course of courses$.value  ; track course.id){
+    <mat-card class="course-card">
+      <mat-card-header>
+        <mat-card-title>{{ course.title }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>{{ course.description }}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-icon-button (click)="viewLessons(course.id)">
+          <mat-icon>assignment</mat-icon>
+        </button>
+        @if(this.user$.value.role=="teacher"){
+        <button mat-icon-button (click)="edit(course)" appTooltip tooltip="edit">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteCourse(course.id)" appTooltip tooltip="delete">
+          <mat-icon>delete</mat-icon>
+        </button>
+        }
+        @if(this.user$.value.role=="student"){
+          @if(!courseExist(course.id)){
+             <button mat-icon-button (click)="login(course.id)" appTooltip tooltip="login">
+                <mat-icon>login</mat-icon>
+             </button>
+          }
+          @else{
+        <button mat-icon-button (click)="logout(course.id)" appTooltip tooltip="logout">
+          <mat-icon>logout</mat-icon>
+        </button>}
+         }
+      </mat-card-actions>
+    </mat-card>
+    }
+  </div>
+</div>
+
+@if(editFlag){
+<app-course-details [course]="courseToChange" (childSaveCurse)="updateCourse($event)">
+</app-course-details>
+}
+
+@if(addFlag){
+<app-course-details [course]="courseToChange" (childSaveCurse)="addCourse($event)">
+</app-course-details>
+}
